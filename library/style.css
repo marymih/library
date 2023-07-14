@@ -1,4 +1,53 @@
+* {
+    box-sizing: border-box;
+  }
+html {
+    scroll-behavior: smooth; 
+}
 body {
     font-family: 'Forum', cursive;
     font-family: 'Inter', sans-serif;
+}
+h1 {
+    font-family: 'Forum', cursive;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: .02em;
+}
+li {
+    list-style: none;
+}
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.header-container {
+    display: flex;
+    justify-content: space-center;
+    align-items: center;
+    background: #0C0C0E;
+}
+.header-left {
+    margin-left: 20px;
+    margin-right: 336px;
+}
+.header-center {
+    margin-right: 40px;
+}
+.nav-list {
+    display: flex;
+}
+.nav-link {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 400;
+    line-height: 50px;
+    padding: 0 20px;
+}
+.header-right {
+    margin-right: 20px;
 }
