@@ -42,6 +42,15 @@ h2::after {
 }
 h3 {
     font-family: 'Forum', cursive;
+    font-size: 40px;
+    color: #BB945F;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+h4 {
+    font-family: 'Forum', cursive;
     font-size: 20px;
     color: #000000;
     font-weight: 400;
@@ -49,9 +58,9 @@ h3 {
     letter-spacing: 2px;
     text-align: left;
     margin: 15px 0px 20px 0px;
-    position: relative;
+    position: relative; 
 }
-h3::after {
+h4::after {
     content: "";
     position: absolute;
     top: 37px;
@@ -219,12 +228,21 @@ li {
     font-weight: 700;
 }
 .book-cards {
-    display: flex;
+    margin-bottom: 20px;
+}
+.book-cards-top {
+    display: inline-flex;
+    margin-bottom: 40px;
+}
+.book-cards-bottom {
+    display: inline-flex;
+    margin-bottom: 40px;
 }
 .book-card-full {
     width: 590px;
     height: 555px;
     position: relative;
+    margin-right: 220px;
 }
 .book-card {
     width: 550px;
@@ -252,7 +270,7 @@ li {
     margin-bottom: 20px;
 }
 .book-descr {
-    width: 355px;
+    width: 357px;
     height: 320px;
     margin-bottom: 15px;
 
@@ -283,4 +301,122 @@ li {
     color: #000000;
     font-weight: 700;
     letter-spacing: 1px;
+}
+.book-card-button:hover {
+    cursor: pointer;
+    border: 1px solid #BB945F;
+    color: #BB945F;
+}
+.active-button {
+    background-color: #ffffff;
+    border: 1px solid #BB945F;
+    border-radius: 2px;
+    width: 75px;
+    height: 30px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: #BB945F;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.coffee-shop-section {
+    margin-bottom: 20px;
+}
+.coffee-shop-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0 20px 40px 20px;
+}
+.menu {
+    display: flex;
+    align-items: center;    
+    margin-left: 20px;
+}
+.menu-left {
+    margin-right: 516px;
+}
+.menu-right {
+    text-align: right;    
+}
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;   
+}
+.name-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;    
+    text-transform: capitalize;
+    width: 196px;
+    white-space: nowrap;
+}
+.line {
+    width: 100px;
+    height: 1px;
+    background-color: #BB945F;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.price-item {
+    font-family: 'Forum', cursive;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+.contacts-body {
+    display: flex;    
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 60px;
+}
+.contacts {
+    margin-right: 199px;
+}
+.contacts-subject {
+    margin-bottom: 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;    
+    text-transform: capitalize;
+}
+.contacts-phone-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 400;
+    line-height: 3;
+    letter-spacing: 2px;    
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+.contacts-director {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 400;
+    line-height: 3;
+    letter-spacing: 2px;    
+    text-transform: capitalize;
+    margin-top: -20px;
+}
+.contacts-map {
+    width: 696px;
+    height: 414px;
+    margin-right: 20px;
 }
