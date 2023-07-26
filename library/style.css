@@ -9,6 +9,10 @@ html {
 body {
     font-family: 'Forum', cursive;
     font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
 }
 h1 {
     font-family: 'Forum', cursive;
@@ -81,11 +85,16 @@ h5 {
 li {
     list-style: none;
 }
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
 .container {
     max-width: 1440px;
     margin: 0 auto;
 }
 .header-container {
+    width: 100%;
     height: 90px;
     display: flex;
     align-items: center;
@@ -114,6 +123,9 @@ li {
 }
 .header-right {
     margin-right: 20px;
+}
+.hidden {
+    display: none;
 }
 .welcome-section-bg {
     height: 600px;
@@ -230,11 +242,8 @@ li {
     font-weight: 400;
     margin-right: 90px;
 }
-.season-choice-button .checked {
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    color: #000000;
-    font-weight: 700;
+.season-choice-button input:checked + label{
+    font-weight: 700
 }
 .book-cards {
     margin-bottom: 20px;
@@ -314,7 +323,7 @@ li {
 .book-card-button:hover {
     cursor: pointer;
     border: 1px solid #BB945F;
-    color: #BB945F;
+    background-color: #BB945F;
 }
 .active-button {
     background-color: #ffffff;
@@ -512,6 +521,11 @@ li {
     letter-spacing: 1px;
     background-clip: padding-box;
 }
+.check-card-button:hover {
+    cursor: pointer;
+    border: 1px solid #BB945F;
+    background-color: #BB945F;
+}
 .get-library-card {
     margin-right: 20px;
 }
@@ -553,4 +567,73 @@ li {
     line-height: auto;
     letter-spacing: 1px;
     background-clip: padding-box;
+}
+.get-library-card-button:hover {
+    cursor: pointer;
+    border: 1px solid #BB945F;
+    background-color: #BB945F;
+}
+.footer-container {
+    background: #0C0C0E;
+    padding-top: 20px;
+    padding-bottom: 44px;
+}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    margin-bottom: 68px;
+}
+.footer-top p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.footer-top::after {
+    position: absolute;
+    content: "";
+    top: 120px;
+    width: 1400px;
+    height: 1px;
+    background-color: #FFFFFF;
+}
+.social-media-list {
+    display: flex;
+    padding-top: 10px;
+}
+.social-media-icon {
+    margin-right: 12px;
+    display: inline;
+}
+.right {
+    text-align: end;
+}
+.footer-bottom {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.footer-bottom-list {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+    display: flex;
+}
+.footer-bottom-list > li:nth-child(1n) {
+    margin-right: 494px;
+}
+.footer-bottom-list > li:nth-child(2n) {
+    margin-right: 319px;
+}
+.footer-bottom-list-item {
+    display: inline;
+    white-space: nowrap;
 }
