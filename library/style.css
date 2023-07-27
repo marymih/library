@@ -87,7 +87,6 @@ li {
 }
 a {
     text-decoration: none;
-    color: #FFFFFF;
 }
 .container {
     max-width: 1440px;
@@ -97,6 +96,7 @@ a {
     width: 100%;
     height: 90px;
     display: flex;
+    justify-content: center;
     align-items: center;
     background: #0C0C0E;
 }
@@ -121,8 +121,15 @@ a {
     line-height: 50px;
     padding: 0 15px;
 }
+.nav-link:hover {
+    text-decoration: underline;
+    transition: .3s;
+}
 .header-right {
     margin-right: 20px;
+}
+.header-right:hover {
+    cursor: pointer;
 }
 .hidden {
     display: none;
@@ -227,7 +234,7 @@ a {
 }
 .season-choice-button {
     accent-color: #000000;
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
 }
 .season-choice-button input {
     margin-right: 20px;
@@ -324,6 +331,7 @@ a {
     cursor: pointer;
     border: 1px solid #BB945F;
     background-color: #BB945F;
+    transition: .3s;
 }
 .active-button {
     background-color: #ffffff;
@@ -360,7 +368,7 @@ a {
     margin-right: 516px;
 }
 .menu-right {
-    text-align: right;    
+    text-align: right;  
 }
 .menu-item {
     display: flex;
@@ -423,6 +431,12 @@ a {
     text-transform: capitalize;
     margin-bottom: 30px;
 }
+.contacts-phone-number a {
+    color: #000000;
+}
+.contacts-phone-number a:hover {
+    text-decoration: underline;
+}
 .contacts-director {
     font-family: 'Inter', sans-serif;
     font-size: 20px;
@@ -432,6 +446,12 @@ a {
     letter-spacing: 2px;    
     text-transform: capitalize;
     margin-top: -20px;
+}
+.contacts-director a {
+    color: #000000;
+}
+.contacts-director a:hover {
+    text-decoration: underline;
 }
 .contacts-map {
     width: 696px;
@@ -459,7 +479,7 @@ a {
     display: flex;
     width: 600px;
     height: 386px;
-    border: 2px solid #BB945F;
+    border: 3px solid #BB945F;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .find-library-card-inputs {
@@ -525,6 +545,7 @@ a {
     cursor: pointer;
     border: 1px solid #BB945F;
     background-color: #BB945F;
+    transition: .3s;
 }
 .get-library-card {
     margin-right: 20px;
@@ -572,6 +593,7 @@ a {
     cursor: pointer;
     border: 1px solid #BB945F;
     background-color: #BB945F;
+    transition: .3s;
 }
 .footer-container {
     background: #0C0C0E;
@@ -602,7 +624,7 @@ a {
     height: 1px;
     background-color: #FFFFFF;
 }
-.social-media-list {
+.social-media {
     display: flex;
     padding-top: 10px;
 }
@@ -627,13 +649,20 @@ a {
     letter-spacing: 2px;
     display: flex;
 }
-.footer-bottom-list > li:nth-child(1n) {
+.footer-bottom-list > li:nth-child(1) {
     margin-right: 494px;
 }
-.footer-bottom-list > li:nth-child(2n) {
+.footer-bottom-list > li:nth-child(2) {
     margin-right: 319px;
 }
 .footer-bottom-list-item {
     display: inline;
     white-space: nowrap;
+}
+.footer-link {
+    color: #ffffff;
+}
+.footer-link:hover {
+    text-decoration: underline;
+    transition: .3s;
 }
