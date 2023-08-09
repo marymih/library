@@ -365,20 +365,18 @@ a {
 }
 .menu {
     display: flex;
-    align-items: center;    
+    justify-content: space-between;    
     margin-left: 20px;
-}
-.menu-left {
-    margin-right: 516px;
+    margin-right: 20px;
 }
 .menu-right {
     text-align: right;  
 }
 .menu-item {
-    display: flex;
-    justify-content: space-between;
+    display: inline-flex;
     align-items: center;
-    margin-bottom: 40px;   
+    margin-bottom: 40px; 
+    gap: 60px; 
 }
 .name-item {
     font-family: 'Inter', sans-serif;
@@ -388,15 +386,13 @@ a {
     line-height: 40px;
     letter-spacing: 2px;    
     text-transform: capitalize;
-    width: 196px;
+    width: 205px;
     white-space: nowrap;
 }
 .line {
     width: 100px;
     height: 1px;
     background-color: #BB945F;
-    margin-left: 60px;
-    margin-right: 60px;
 }
 .price-item {
     font-family: 'Forum', cursive;
@@ -409,11 +405,7 @@ a {
 .contacts-body {
     display: flex;    
     justify-content: space-between;
-    margin-left: 20px;
-    margin-bottom: 60px;
-}
-.contacts {
-    margin-right: 199px;
+    margin: 0 20px 58px 20px;
 }
 .contacts-subject {
     margin-bottom: 30px;
@@ -457,18 +449,10 @@ a {
 .contacts-director a:hover {
     text-decoration: underline;
 }
-.contacts-map {
-    width: 696px;
-    height: 414px;
-    margin-right: 20px;
-}
 .library-card-body {
     display: flex;
-    margin-bottom: 40px;
-}
-.find-library-card {
-    margin-left: 20px;
-    margin-right: 344px;
+    justify-content: space-between;
+    margin: 0 20px 40px 20px;
 }
 .find-library-card p {
     font-family: 'Inter', sans-serif;
@@ -490,7 +474,7 @@ a {
     width: 560px;
     height: 272px;
     background-color: #BB945F;
-    margin: 20px;
+    margin: 18px;
     padding: 20px 18px 25px;
 }
 .div-name-input {
@@ -552,14 +536,13 @@ a {
     transition: .3s;
 }
 .get-library-card {
-    margin-right: 20px;
+    width: 33%;
 }
 .get-library-card-name {
     font-family: 'Forum', cursive;
     font-size: 30px;
     color: #000000;
     font-weight: 400;
-    line-height: auto;
     letter-spacing: .02em;
     text-align: end;
     margin-bottom: 35px;
@@ -607,10 +590,7 @@ a {
 .footer-top {
     display: flex;
     justify-content: space-between;
-    margin-left: 20px;
-    margin-right: 20px;
-    position: relative;
-    margin-bottom: 68px;
+    margin: 0 20px 19px 20px;
 }
 .footer-top p {
     font-family: 'Inter', sans-serif;
@@ -620,13 +600,11 @@ a {
     line-height: 20px;
     margin-bottom: 10px;
 }
-.footer-top::after {
-    position: absolute;
-    content: "";
-    top: 120px;
+.footer-line {
     max-width: 1400px;
     height: 1px;
     background-color: #FFFFFF;
+    margin: 0 20px 44px 20px;
 }
 .social-media {
     display: flex;
@@ -641,8 +619,7 @@ a {
 }
 .footer-bottom {
     display: flex;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 20px;
 }
 .footer-bottom-list {
     font-family: 'Inter', sans-serif;
@@ -652,12 +629,11 @@ a {
     line-height: 20px;
     letter-spacing: 2px;
     display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 .footer-bottom-list > li:nth-child(1) {
-    margin-right: 494px;
-}
-.footer-bottom-list > li:nth-child(2) {
-    margin-right: 319px;
+    margin-right: 42px;
 }
 .footer-bottom-list-item {
     display: inline;
@@ -723,6 +699,12 @@ a {
         justify-content: center;
         gap: 40px;
     }
+    .contacts-body {
+        align-items: center;
+    }
+    .contacts-map img{
+        width: 500px;
+    }
 }
 
 /* from 1024px*/
@@ -761,5 +743,37 @@ a {
     }
     .slider-items {
         max-width: 450px;
+    }
+    .menu {
+        flex-direction: column;
+    }
+    .contacts-body {
+        
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contacts {
+        margin-bottom: 100px;
+    }
+    .contacts-map img{
+        width: 696px;
+    }
+    .library-card-body {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .get-library-card {
+        width: 75%;
+    }
+    .get-library-card-name {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .get-library-card-descr {
+        text-align: center;
+    }
+    .get-library-card-buttons {
+        justify-content: center;
     }
 }
