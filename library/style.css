@@ -9,10 +9,8 @@ html {
 body {
     font-family: 'Forum', cursive;
     font-family: 'Inter', sans-serif;
-    /* display: flex; */
     flex-direction: column;
     justify-content: space-between;
-    overflow-x: hidden;
 }
 h1 {
     font-family: 'Forum', cursive;
@@ -217,6 +215,9 @@ a {
 .slider-pagination:hover {
     background-color: #BB945F;
 }
+.slider-pagination-tablet {
+    display: none;
+}
 .active {
     background-color: #BB945F;
 }
@@ -229,17 +230,21 @@ a {
     color: #000000;
     font-weight: 700;
     margin-left: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 .season-choice {
     display: flex;
     margin-left: 20px;
 }
 .season-choice-button {
-    accent-color: #000000;
-    margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 85px;
+    margin-bottom: 35px;
 }
 .season-choice-button input {
+    accent-color: #000000;
     margin-right: 20px;
 }
 .season-choice-button input, label:hover {
@@ -250,7 +255,7 @@ a {
     font-size: 20px;
     color: #000000;
     font-weight: 400;
-    margin-right: 90px;
+    padding: 5px;
 }
 .season-choice-button input:checked + label{
     font-weight: 700
@@ -465,10 +470,11 @@ a {
 }
 .find-library-card-form {
     display: flex;
-    width: 600px;
+    max-width: 600px;
     height: 386px;
     border: 3px solid #BB945F;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
 }
 .find-library-card-inputs {
     width: 560px;
@@ -572,7 +578,6 @@ a {
     font-size: 10px;
     color: #0C0C0E;
     font-weight: 700;
-    line-height: auto;
     letter-spacing: 1px;
     background-clip: padding-box;
 }
@@ -630,6 +635,8 @@ a {
     letter-spacing: 2px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    align-content: center;
     width: 100%;
 }
 .footer-bottom-list > li:nth-child(1) {
@@ -699,18 +706,41 @@ a {
         justify-content: center;
         gap: 40px;
     }
+    .book-card-img {
+        right: 0;
+    }
+    .book-card {
+        margin-left: 0;
+    }
     .contacts-body {
         align-items: center;
     }
     .contacts-map img{
-        width: 500px;
+        max-width: 500px;
     }
 }
 
 /* from 1024px*/
 @media (max-width: 1024px) {
-    .header-center {
-        display: none;
+    .nav-list {
+        display: flex;
+        height: 480px;
+        width: 332px;
+        z-index: 1;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 30px;
+        position: fixed;
+        top: 90px;
+        right: -500px;
+        padding-top: 10px;
+        background-color: #0C0C0E;
+        transition: 1s;
+    }
+    .menu-burger-open {
+        right: 0;
+        position: absolute;
     }
     .header-container {
         justify-content: left;
@@ -722,20 +752,43 @@ a {
     .header-right {
         margin-right: 40px;
     }
-    .menu-burger {
-        margin-right: 35px;
+    .menu-burger-btn {
+        margin-right: 20px;
         display: flex;
         flex-direction: column;
         gap: 8px;
+        position: relative;
     }
-    .menu-burger div {
+    .menu-burger-btn::before {
+        content: "";
+        position: absolute;
+        width: 55px;
+        height: 32px;
+        top: -5px;
+        left: -5px;
+    }
+    .menu-burger-btn span {
         height: 2px;
         width: 45px;
         background: #ffffff;
+        transition: .5s;
+    }
+    .menu-burger-btn-active span:nth-of-type(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+    .menu-burger-btn-active span:nth-of-type(2) {
+        display: none;
+    }
+    .menu-burger-btn-active span:nth-of-type(3) {
+        transform: rotate(-45deg);
+    }
+    .about-section p {
+        margin-left: 20px;
+        margin-right: 20px;
     }
     .slider-wrapper {
         max-width: 614px;
-        margin: 0 auto;
+        margin-bottom: 20px;
     }
     .slider-container {
         max-width: 450px;
@@ -744,19 +797,24 @@ a {
     .slider-items {
         max-width: 450px;
     }
+    .slider-pagination-tablet {
+        display: block;
+    }
     .menu {
         flex-direction: column;
     }
     .contacts-body {
-        
         flex-direction: column;
         align-items: flex-start;
     }
     .contacts {
-        margin-bottom: 100px;
+        margin-bottom: 90px;
+    }
+    .contacts-map {
+        margin: 0 auto;
     }
     .contacts-map img{
-        width: 696px;
+        max-width: 696px;
     }
     .library-card-body {
         flex-direction: column;
@@ -772,8 +830,21 @@ a {
     }
     .get-library-card-descr {
         text-align: center;
+        margin-bottom: 39px;
     }
     .get-library-card-buttons {
         justify-content: center;
     }
+    .footer-bottom-list > li:nth-child(1) {
+        margin-right: -15px;
+    }
+/* from  767px*/
+@media (max-width: 767px) {
+    .season-choice {
+        flex-direction: column;
+    }
+    .contacts-map img{
+        max-width: 500px;
+    }
+}
 }
