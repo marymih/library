@@ -724,17 +724,17 @@ a {
 @media (max-width: 1024px) {
     .nav-list {
         display: flex;
-        height: 480px;
+        height: 590px;
         width: 332px;
-        z-index: 1;
+        z-index: 2;
         flex-direction: column;
         justify-content: start;
         align-items: center;
         gap: 30px;
         position: fixed;
-        top: 90px;
+        top: 0px;
         right: -500px;
-        padding-top: 10px;
+        padding-top: 100px;
         background-color: #0C0C0E;
         transition: 1s;
     }
@@ -751,6 +751,7 @@ a {
     }
     .header-right {
         margin-right: 40px;
+        z-index: 3;
     }
     .menu-burger-btn {
         margin-right: 20px;
@@ -758,6 +759,7 @@ a {
         flex-direction: column;
         gap: 8px;
         position: relative;
+        z-index: 3;
     }
     .menu-burger-btn::before {
         content: "";
