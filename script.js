@@ -36,7 +36,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const btnMid = document.querySelector('.btn-mid');
     const btnNext = document.querySelector('.btn-next');
 
-    
+    btnPrev.addEventListener('click', () => {
+        alert(btnPrev);
+    })
 
 
 

@@ -137,7 +137,7 @@ a {
 .welcome-section-bg {
     margin-top: -1px;
     height: 600px;
-    background: url(../library/assets/img/bg.jpeg) center/cover no-repeat; 
+    background: url(assets/img/bg.jpeg) center/cover no-repeat; 
     position: relative;
     margin-bottom: 20px;
 }
