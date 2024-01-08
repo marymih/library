@@ -30,7 +30,12 @@
                     </nav>
                 </div>
                 <div class="header-right">
-                    <img src="../library/assets/svg/icon_profile.svg" alt ="profile icon">
+                    <img src="../assets/svg/icon_profile.svg" alt ="profile icon">
+                </div>
+                <div class="menu-burger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </header>
@@ -52,34 +57,51 @@
                 <div class="about-section">
                     <h2>About</h2>
                     <p>The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
-                    <div class="slider-container">
-                        <div class="slider-items">
-                            <div class="slider-item">
-                                <img src="../library/assets/img/slider_1.jpg" alt="slider">
-                            </div>
-                            <div class="slider-item">
-                                <img src="../library/assets/img/slider_2.jpg" alt="slider">
-                            </div>
-                            <div class="slider-item">
-                                <img src="../library/assets/img/slider_3.jpg" alt="slider">
-                            </div>
-                            <div class="slider-item">
-                                <img src="../library/assets/img/slider_4.jpg" alt="slider">
-                            </div>
-                            <div class="slider-item">
-                                <img src="../library/assets/img/slider_5.jpg" alt="slider">
-                            </div>
-                        </div>                        
+                    <div class="slider-wrapper">
+                        <div class="slider-container">
+                            <div class="slider-items">
+                                <div class="slider-item">
+                                    <img src="../assets/img/slider_1.jpg" alt="slider">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="../assets/img/slider_2.jpg" alt="slider">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="../assets/img/slider_3.jpg" alt="slider">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="../assets/img/slider_4.jpg" alt="slider">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="../assets/img/slider_5.jpg" alt="slider">
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class="slider-btns">
+                            <button class="btn-left">
+                                <img src="../assets/svg/btn_left.svg" alt="left">
+                            </button>
+                            <button class="btn-right">
+                                <img src="../assets/svg/btn_right.svg" alt="right">
+                            </button>
+                            
+                        </div>
                     </div>
-                    <div class="slider-buttons">
-                        <div class="slider-button-bg">
-                            <div class="slider-button active"></div>
+                    <div class="slider-pagination-container">
+                        <div class="slider-pagination-bg">
+                            <div class="slider-pagination active btn-prev"></div>
                         </div>
-                        <div class="slider-button-bg">
-                            <div class="slider-button"></div>
+                        <div class="slider-pagination-bg">
+                            <div class="slider-pagination btn-mid"></div>
                         </div>
-                        <div class="slider-button-bg">
-                            <div class="slider-button"></div>
+                        <div class="slider-pagination-bg">
+                            <div class="slider-pagination btn-next"></div>
+                        </div>
+                        <div class="slider-pagination-bg slider-pagination-tablet">
+                            <div class="slider-pagination slider-pagination-tablet"></div>
+                        </div>
+                        <div class="slider-pagination-bg slider-pagination-tablet">
+                            <div class="slider-pagination slider-pagination-tablet"></div>
                         </div>
                     </div>
                 </div> 
@@ -118,7 +140,7 @@
                                         <p class="book-author">By Sunyi Dean</p>
                                         <div class="book-descr"><p>An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p></div>
                                     </div>
-                                    <div class="book-card-img"><img src="../library/assets/img/book_1.png" alt="book"></div>
+                                    <div class="book-card-img"><img src="../assets/img/book_1.png" alt="book"></div>
                                     <button class="book-card-button">Buy</button>
                                 </div>
                             </div>
@@ -130,7 +152,7 @@
                                         <p class="book-author">By Rachel Harrison</p>
                                         <div class="book-descr"><p>Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p></div>
                                     </div>
-                                    <div class="book-card-img"><img src="../library/assets/img/book_2.png" alt="book"></div>
+                                    <div class="book-card-img"><img src="../assets/img/book_2.png" alt="book"></div>
                                     <button class="book-card-button">Buy</button>
                                 </div>
                             </div>
@@ -144,7 +166,7 @@
                                         <p class="book-author">By Erich Auerbach</p>
                                         <div class="book-descr"><p>Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p></div>
                                     </div>
-                                    <div class="book-card-img"><img src="../library/assets/img/book_3.png" alt="book"></div>
+                                    <div class="book-card-img"><img src="../assets/img/book_3.png" alt="book"></div>
                                     <button class="book-card-button">Buy</button>
                                 </div>
                             </div>
@@ -156,7 +178,7 @@
                                         <p class="book-author">By Clive Irving</p>
                                         <div class="book-descr"><p>A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p></div>
                                     </div>
-                                    <div class="book-card-img"><img src="../library/assets/img/book_4.png" alt="book"></div>
+                                    <div class="book-card-img"><img src="../assets/img/book_4.png" alt="book"></div>
                                     <button class="active-button" disabled>Own</button>
                                 </div>
                             </div>
@@ -284,7 +306,7 @@
                             <p class="contacts-director">Library Director: <a href="mailto:amandaHirst@gmail.com"><b>Amanda Hirst</b></a></p>
                         </div>
                         <div class="contacts-map">
-                            <img src="../library/assets/img/map.png" alt="">
+                            <img src="../assets/img/map.png" alt="">
                         </div>
                     </div>
                 </div>                      
@@ -335,13 +357,13 @@
                         <div class="social-media">
                             <ul class="social-media-list">
                                 <li class="social-media-icon">
-                                    <a href="http://www.twitter.com/bklynlibrary" target="_blank" class="social-media-link"><img src="../library/assets/svg/twitter.svg" alt="twitter"></a>
+                                    <a href="http://www.twitter.com/bklynlibrary" target="_blank" class="social-media-link"><img src="../assets/svg/twitter.svg" alt="twitter"></a>
                                 </li>
                                 <li class="social-media-icon">
-                                    <a href="https://www.instagram.com/bklynlibrary/" target="_blank" class="social-media-link"><img src="../library/assets/svg/instagram.svg" alt="instagram"></a>
+                                    <a href="https://www.instagram.com/bklynlibrary/" target="_blank" class="social-media-link"><img src="../assets/svg/instagram.svg" alt="instagram"></a>
                                 </li>
                                 <li class="social-media-icon">
-                                    <a href="https://www.facebook.com/BrooklynPublicLibrary/" target="_blank" class="social-media-link"><img src="../library/assets/svg/facebook.svg" alt="facebook"></a>
+                                    <a href="https://www.facebook.com/BrooklynPublicLibrary/" target="_blank" class="social-media-link"><img src="../assets/svg/facebook.svg" alt="facebook"></a>
                                 </li>
                             </ul>
                         </div>
@@ -351,16 +373,18 @@
                         <p>Sat - Sun<br>10:00 am - 06:00 pm</p>
                     </div>
                 </div>
+                <div class="footer-line"></div>
                 <div class="footer-bottom">
                     <ul class="footer-bottom-list">
                         <li class="footer-bottom-list-item">2023</li>
                         <li class="footer-bottom-list-item"><a href="https://rs.school/js-stage0/ " target="_blank" class="footer-link">The Rolling Scopes School</a></li>
-                        <li class="footer-bottom-list-item"><a href="https://github.com/marymih" target="_blank" class="footer-link">Mariia Mikhalchenko</a></li>
+                        <li class="footer-bottom-list-item"><a href="https://github.com/marymih" target="_blank" class="footer-link">marymih</a></li>
                     </ul>
                 </div>
             </div>
         </footer>
     </div>
-    <script src="../library/index.js"></script> 
+    <script src="../index.js"></script>
+    <script src="../script.js"></script> 
 </body>
 </html>
