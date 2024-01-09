@@ -178,10 +178,14 @@ a {
     margin: 0 20px;
     margin-bottom: 35px;
 }
-.slider-items {
+.slider-container {
     overflow: hidden;
+}
+
+.slider-items {
     display: flex;
     gap: 25px;
+    position: relative;
 }
 .slider-item {
     height: 560px;
