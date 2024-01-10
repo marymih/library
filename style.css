@@ -186,6 +186,8 @@ a {
     display: flex;
     gap: 25px;
     position: relative;
+    transition: all 0.5s ease;
+    left: 0px;
 }
 .slider-item {
     height: 560px;
@@ -225,9 +227,9 @@ a {
 .active {
     background-color: #BB945F;
 }
-.active:hover {
+/* .active:hover {
     background-color: #0C0C0E;
-}
+} */
 .fav-section-text{
     font-family: 'Inter', sans-serif;
     font-size: 20px;
