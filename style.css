@@ -659,6 +659,24 @@ a {
     text-decoration: underline;
     transition: .3s;
 }
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+@keyframes fade {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 /* from 1439px*/
 @media (max-width: 1439px) {
@@ -721,7 +739,7 @@ a {
     .contacts-body {
         align-items: center;
     }
-    .contacts-map img{
+    .contacts-map iframe{
         max-width: 500px;
     }
 }
@@ -821,7 +839,7 @@ a {
     .contacts-map {
         margin: 0 auto;
     }
-    .contacts-map img{
+    .contacts-map iframe{
         max-width: 696px;
     }
     .library-card-body {
@@ -851,7 +869,7 @@ a {
     .season-choice {
         flex-direction: column;
     }
-    .contacts-map img{
+    .contacts-map iframe{
         max-width: 500px;
     }
 }
