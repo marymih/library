@@ -99,6 +99,7 @@ a {
     display: flex;
     align-items: center;
     background: #0C0C0E;
+    position: relative;
 }
 .header-left {
     margin-left: 20px;
@@ -131,8 +132,47 @@ a {
 .header-right:hover {
     cursor: pointer;
 }
-.hidden {
-    display: none;
+.dropdown-menu {
+    top: 90px;
+    right: 0;
+    position: absolute;
+    z-index: 3;
+    width: 80px;
+    height: 115px;
+    background-color: #ffffff;
+    text-align: center;
+}
+.dropdown-link {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #000000;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: capitalize;
+}
+.dropdown-link:hover {
+    text-decoration: underline;
+    transition: .3s;
+}
+.profile {
+    font-weight: 700;
+}
+.profile::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: 19px;
+    width: 40px;
+    height: 1px;
+    background-color: #BB945F;
+}
+.dropdown-list > li:nth-child(1) {
+    margin-top: 5px;
+    margin-bottom: 18px;
+}
+.dropdown-list > li:nth-child(2) {
+    margin-bottom: 8px;
 }
 .welcome-section-bg {
     margin-top: -1px;
@@ -677,6 +717,78 @@ a {
         opacity: 1;
     }
 }
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;   
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+}
+.modal_dialog {
+    max-width: 250px;
+    height: 262px;
+    margin: 40px auto;
+}
+.modal_content {
+    position: relative;
+    width: 100%;
+    padding: 20px 25px;
+    background-color: #ffffff;
+}
+.modal_close {
+    position: absolute;
+    top: 1px;
+    right: 12px;
+    font-size: 32px;
+    color: #000000;
+    font-weight: 500;
+    cursor: pointer;
+}
+.modal_title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Forum', cursive;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+.modal_input {
+    display: block;
+    margin: 10px auto 10px auto;
+    width: 200px;
+    height: 20px;
+    border: 1px solid #BB945F;
+    padding: 0 10px;
+}
+.modal_text {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #000000;
+    font-weight: 400;
+    line-height: 20px;
+}
+.modal_content_form button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.modal_bottom_text {
+    display: flex;
+}
+.modal_bottom_text p {
+    margin-right: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: #000000;
+}
+.text_bold {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
 
 /* from 1439px*/
 @media (max-width: 1439px) {
@@ -807,6 +919,10 @@ a {
     }
     .menu-burger-btn-active span:nth-of-type(3) {
         transform: rotate(-45deg);
+    }
+    .dropdown-menu {
+        position: fixed;
+        right: 79px;
     }
     .about-section p {
         margin-left: 20px;

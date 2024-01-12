@@ -24,6 +24,21 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+    //   dropdown menu
+  const dropdownBtn = document.querySelector('.dropdown-btn'),
+    dropdownMenu = document.querySelector('.dropdown-menu'),
+    dropdownItem = document.querySelectorAll('.dropdown-item');
+
+    dropdownBtn.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hide');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!dropdownMenu.contains(e.target) && e.target !== dropdownBtn) {
+            dropdownMenu.classList.add('hide');
+        }
+    });
+
   // slider
   let position = 1;
   let slidesToShow = 1;
@@ -129,6 +144,9 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  hideTabContent();
+  showTabContent();
+
   tabsParent.addEventListener('click', (event) => {
     const target = event.target;
 
@@ -141,4 +159,39 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // modal
+
+  const modalShow = document.querySelectorAll('[data-login]'),
+    modal = document.querySelector('.modal'),
+    modalClose = document.querySelector('[data-close]');
+
+  modalShow.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      modal.classList.add('show');
+      modal.classList.remove('hide');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  const closeModal = () => {
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  };
+
+  modalClose.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Escape' && modal.classList.contains('show')) {
+      closeModal();
+    }
+  });
+  
 });
