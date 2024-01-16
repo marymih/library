@@ -24,20 +24,20 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-    //   dropdown menu
+  //   dropdown menu
   const dropdownBtn = document.querySelector('.dropdown-btn'),
     dropdownMenu = document.querySelector('.dropdown-menu'),
     dropdownItem = document.querySelectorAll('.dropdown-item');
 
-    dropdownBtn.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('hide');
-    });
+  dropdownBtn.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('hide');
+  });
 
-    document.addEventListener('click', (e) => {
-        if (!dropdownMenu.contains(e.target) && e.target !== dropdownBtn) {
-            dropdownMenu.classList.add('hide');
-        }
-    });
+  document.addEventListener('click', (e) => {
+    if (!dropdownMenu.contains(e.target) && e.target !== dropdownBtn) {
+      dropdownMenu.classList.add('hide');
+    }
+  });
 
   // slider
   let position = 1;
@@ -162,36 +162,101 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // modal
 
-  const modalShow = document.querySelectorAll('[data-login]'),
-    modal = document.querySelector('.modal'),
-    modalClose = document.querySelector('[data-close]');
+  const modalLoginShow = document.querySelectorAll('[data-login]'),
+    modalRegisterShow = document.querySelectorAll('[data-register]'),
+    modalLogin = document.querySelector('.login'),
+    modalRegister = document.querySelector('.register'),
+    modalClose = document.querySelectorAll('[data-close]');
 
-  modalShow.forEach((btn) => {
+  modalLoginShow.forEach((btn) => {
     btn.addEventListener('click', () => {
-      modal.classList.add('show');
-      modal.classList.remove('hide');
+      modalLogin.classList.add('show');
+      modalLogin.classList.remove('hide');
+      modalRegister.classList.add('hide');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  modalRegisterShow.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      modalRegister.classList.add('show');
+      modalRegister.classList.remove('hide');
       document.body.style.overflow = 'hidden';
     });
   });
 
   const closeModal = () => {
-    modal.classList.add('hide');
-    modal.classList.remove('show');
+    modalLogin.classList.add('hide');
+    modalLogin.classList.remove('show');
+    modalRegister.classList.add('hide');
+    modalRegister.classList.remove('show');
     document.body.style.overflow = '';
   };
 
-  modalClose.addEventListener('click', closeModal);
+  modalClose.forEach((btn) => {
+    btn.addEventListener('click', closeModal);
+  });
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
+  modalLogin.addEventListener('click', (e) => {
+    if (e.target === modalLogin) {
+      closeModal();
+    }
+  });
+
+  modalRegister.addEventListener('click', (e) => {
+    if (e.target === modalRegister) {
       closeModal();
     }
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.code === 'Escape' && modal.classList.contains('show')) {
+    if (e.code === 'Escape' && modalLogin.classList.contains('show')) {
+      closeModal();
+    }
+    if (e.code === 'Escape' && modalRegister.classList.contains('show')) {
       closeModal();
     }
   });
-  
+
+  // registration
+
+  // modalRegister
+  const registerForm = document.querySelector('.register-form'),
+    registerInput = document.querySelectorAll('.register-input'),
+    registerBtn = document.querySelector('#register-btn');
+
+  registerBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const data = Array.from(registerInput).reduce((acc, input) => {
+      acc[input.name] = input.value;
+      return acc;
+    }, {});
+
+    localStorage.setItem('registerData', JSON.stringify(data));
+  });
+
+  const loginForm = document.querySelector('.login-form'),
+    loginInput = document.querySelectorAll('.login-input'),
+    loginBtn = document.querySelector('#login-btn');
+
+  loginBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const loginData = Array.from(loginInput).reduce((acc, input) => {
+      acc[input.name] = input.value;
+      return acc;
+    }, {});
+
+    const registerData = JSON.parse(localStorage.getItem('registerData'));
+
+    if (
+      loginData.username === registerData.username &&
+      loginData.password === registerData.password
+    ) {
+      console.log('Login successful!');
+    } else {
+      console.log('Invalid username or password.');
+    }
+  });
 });

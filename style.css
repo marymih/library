@@ -728,7 +728,6 @@ a {
 }
 .modal_dialog {
     max-width: 250px;
-    height: 262px;
     margin: 40px auto;
 }
 .modal_content {
@@ -784,10 +783,13 @@ a {
     font-size: 10px;
     color: #000000;
 }
-.text_bold {
+.link_bold {
     font-weight: 700;
     letter-spacing: 1px;
     text-decoration: underline;
+}
+.link_bold:hover {
+    cursor: pointer;
 }
 
 /* from 1439px*/

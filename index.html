@@ -40,8 +40,8 @@
                 <div class="dropdown-menu hide">
                     <ul class="dropdown-list">
                         <li class="dropdown-item"><a href="#" class="dropdown-link profile">Profile</a></li>
-                        <li class="dropdown-item"><a href="#" class="dropdown-link">Log in</a></li>
-                        <li class="dropdown-item"><a href="#" class="dropdown-link">Register</a></li>
+                        <li data-login class="dropdown-item"><a href="#" class="dropdown-link">Log in</a></li>
+                        <li data-register class="dropdown-item"><a href="#" class="dropdown-link">Register</a></li>
                     </ul>
                 </div>
             </div>
@@ -492,7 +492,7 @@
                             <p class="get-library-card-name">Get a reader card</p>
                             <p class="get-library-card-descr">You will be able to see a reader card after logging into account or you can register a new account</p>
                             <div class="get-library-card-buttons">
-                                <button class="get-library-card-button">Sign Up</button>
+                                <button data-register class="get-library-card-button">Sign Up</button>
                                 <button data-login class="get-library-card-button">Log in</button>
                             </div>
                         </div>
@@ -536,26 +536,49 @@
             </div>
         </footer>
     <!-- Modal log in -->
-        <div class="modal hide">
+        <div class="modal login hide">
             <div class="modal_dialog">
                 <div class="modal_content">
-                    <form class="modal_content_form" action="#">
+                    <form class="modal_content_form login-form" action="#">
                         <div data-close class="modal_close">&times;</div>
                         <div class="modal_title">Login</div>
                         <div class="modal_text">E-mail or readers card</div>
-                        <input required name="e-mail" type="text" class="modal_input">
+                        <input required name="email" type="email" class="modal_input login-input">
                         <div class="modal_text">Password</div>
-                        <input required name="password" type="password" class="modal_input">
-                        <button class="get-library-card-button">Log In</button>
+                        <input required name="password" type="password" class="modal_input login-input">
+                        <button class="get-library-card-button" id="login-btn">Log In</button>
                         <div class="modal_bottom_text">
                             <p>Don’t have an account?</p>
-                            <p class="text_bold">Register</p>
+                            <p data-register class="link_bold">Register</p>
                         </div>
                     </form>
                 </div>
             </div>
-
         </div>
+    <!-- Modal register -->
+    <div class="modal register hide">
+        <div class="modal_dialog">
+            <div class="modal_content">
+                <form class="modal_content_form register-form" action="#">
+                    <div data-close class="modal_close">&times;</div>
+                    <div class="modal_title">Register</div>
+                    <div class="modal_text">First name</div>
+                    <input required name="name" type="text" class="modal_input register-input">
+                    <div class="modal_text">Last name</div>
+                    <input required name="last-name" type="text" class="modal_input register-input">
+                    <div class="modal_text">E-mail</div>
+                    <input required name="email" type="email" class="modal_input register-input">
+                    <div class="modal_text">Password</div>
+                    <input required name="password" type="password" class="modal_input register-input">
+                    <button class="get-library-card-button" id="register-btn">Sign up</button>
+                    <div class="modal_bottom_text">
+                        <p>Already have an account?</p>
+                        <p data-login class="link_bold">Login</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     </div>
     <script src="script.js"></script> 
 </body>
