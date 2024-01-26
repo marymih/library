@@ -4,7 +4,8 @@
     padding: 0;
   }
 html {
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
+    overflow: overlay; 
 }
 body {
     font-family: 'Forum', cursive;
@@ -128,6 +129,19 @@ a {
 }
 .header-right {
     margin-right: 20px;
+}
+.profile-initials {
+    background-color: #ffffff;
+	width: 28px;
+	height: 28px;
+	border-radius: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    color:#BB945F;
+    text-align: center;
+    padding-top: 4px;
 }
 .header-right:hover {
     cursor: pointer;
@@ -761,6 +775,14 @@ a {
     width: 200px;
     height: 20px;
     border: 1px solid #BB945F;
+    padding: 0 10px;
+}
+.modal_wrong_input {
+    display: block;
+    margin: 10px auto 10px auto;
+    width: 200px;
+    height: 20px;
+    border: 1px solid #d26565;
     padding: 0 10px;
 }
 .modal_text {
