@@ -1,144 +1,125 @@
+import burgerMenu from './js/burgerMenu.js';
+import dropdownMenu from './js/dropdownMenu.js';
+import slider from './js/slider.js';
+import tabs from './js/tabs.js';
+import registration from './js/registration.js';
+import authorization from './js/auth.js';
+
 window.addEventListener('DOMContentLoaded', () => {
-  // burger menu
+  burgerMenu();
 
-  const menuBurgerBtn = document.querySelector('.menu-burger-btn'),
-    menuBurger = document.querySelector('.nav-list'),
-    menuBurgerItem = document.querySelectorAll('.nav-item');
+  dropdownMenu();
 
-  menuBurgerBtn.addEventListener('click', () => {
-    menuBurgerBtn.classList.toggle('menu-burger-btn-active');
-    menuBurger.classList.toggle('menu-burger-open');
-  });
+  slider();
 
-  document.addEventListener('click', (e) => {
-    if (!menuBurger.contains(e.target) && e.target !== menuBurgerBtn) {
-      menuBurger.classList.remove('menu-burger-open');
-      menuBurgerBtn.classList.remove('menu-burger-btn-active');
-    }
-  });
+  tabs();
 
-  menuBurgerItem.forEach((item) => {
-    item.addEventListener('click', () => {
-      menuBurger.classList.remove('menu-burger-open');
-      menuBurgerBtn.classList.remove('menu-burger-btn-active');
-    });
-  });
+  // modal
 
-  // slider
-  let position = 1;
-  let slidesToShow = 1;
-  if (window.innerWidth >= 1024) {
-    slidesToShow = 2;
-  }
-  if (window.innerWidth >= 1440) {
-    slidesToShow = 3;
-  }
+  const modalLoginShow = document.querySelectorAll('[data-login]'),
+    modalRegisterShow = document.querySelectorAll('[data-register]'),
+    modalLogin = document.querySelector('.login'),
+    modalRegister = document.querySelector('.register'),
+    modalClose = document.querySelectorAll('[data-close]');
 
-  const slidesToScroll = 1,
-    track = document.querySelector('.slider-items'),
-    items = document.querySelectorAll('.slider-item'),
-    btnItem = document.querySelector('.slider-pagination-bg'),
-    btnContainer = document.querySelector('.slider-pagination-container'),
-    btnLeft = document.querySelector('.btn-left'),
-    btnRight = document.querySelector('.btn-right');
-
-  btnLeft.style.display = 'none';
-  if (items.length < 2) {
-    btnRight.style.display = 'none';
-  }
-
-  const showSlides = (btns, n) => {
-    if (btns.length < 2) {
-      return;
-    }
-    position = n;
-    btnLeft.style.display = 'block';
-    btnRight.style.display = 'block';
-    if (n >= items.length - slidesToShow + 1) {
-      position = items.length - slidesToShow + 1;
-      btnRight.style.display = 'none';
-    }
-    if (n <= 1) {
-      position = 1;
-      btnLeft.style.display = 'none';
-    }
-
-    btns.forEach((btn) => {
-      btn.classList.remove('active');
-    });
-
-    btns[position - 1].classList.add('active');
-    track.style.left = -(position - 1) * 475 + 'px';
-  };
-
-  for (
-    let i = 0;
-    i < Math.round((items.length - slidesToShow) / slidesToScroll);
-    i++
-  ) {
-    const newBtnContainer = btnItem.cloneNode(true);
-    const newBtn = newBtnContainer.querySelector('.slider-pagination');
-    newBtn.classList.remove('active');
-    btnContainer.innerHTML += newBtnContainer.outerHTML;
-  }
-
-  const btns = document.querySelectorAll('.slider-pagination');
-  btns.forEach((btn, index) => {
+  modalLoginShow.forEach((btn) => {
     btn.addEventListener('click', () => {
-      showSlides(btns, index + 1);
+      modalLogin.classList.add('show');
+      modalLogin.classList.remove('hide');
+      modalRegister.classList.add('hide');
+      document.body.style.overflow = 'hidden';
     });
   });
 
-  btnLeft.addEventListener('click', () => {
-    showSlides(btns, position - 1);
-  });
-
-  btnRight.addEventListener('click', () => {
-    showSlides(btns, position + 1);
-  });
-
-  // tabs
-  const tabsInput = document.querySelectorAll('.season-choice-input'),
-    tabsContent = document.querySelectorAll('.book-card-full'),
-    tabsParent = document.querySelector('.season-choice');
-
-  const hideTabContent = () => {
-    tabsContent.forEach((item) => {
-      item.classList.add('hide');
-      item.classList.remove('show', 'fade');
-      item.parentNode.style.marginBottom = '0';
-    });
-
-    tabsInput.forEach((item) => {
-      item.removeAttribute('checked');
-    });
+  const closeModal = (modalWindow) => {
+    modalWindow.classList.add('hide');
+    modalWindow.classList.remove('show');
+    document.body.style.overflow = 'overlay';
   };
 
-  const showTabContent = (i = 'winter') => {
-    tabsContent.forEach((item) => {
-      if (item.classList.contains(i)) {
-        item.classList.add('show', 'fade');
-        item.classList.remove('hide');
-        item.parentNode.style.marginBottom = '40px';
-      }
-    });
-    tabsInput.forEach((item) => {
-      if (item.id === i) {
-        item.setAttribute('checked', 'checked');
-      }
-    });
-  };
+  modalClose.forEach((btn) => {
+    btn.addEventListener('click', () => closeModal(modalLogin));
+    btn.addEventListener('click', () => closeModal(modalRegister));
+  });
 
-  tabsParent.addEventListener('click', (event) => {
-    const target = event.target;
+  modalLogin.addEventListener('click', (e) => {
+    if (e.target === modalLogin) {
+      closeModal(modalLogin);
+    }
+  });
 
-    if (target && target.classList.contains('season-choice-input')) {
-      tabsInput.forEach((item) => {
-        if (target == item) {
-          hideTabContent();
-          showTabContent(item.id);
-        }
-      });
+  modalRegister.addEventListener('click', (e) => {
+    if (e.target === modalRegister) {
+      closeModal(modalRegister);
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Escape' && modalLogin.classList.contains('show')) {
+      closeModal(modalLogin);
+    }
+    if (e.code === 'Escape' && modalRegister.classList.contains('show')) {
+      closeModal(modalRegister);
+    }
+  });
+
+  // registration
+
+  registration(modalRegister, modalRegisterShow);
+
+  // authorization
+
+  const loginForm = document.querySelector('.login-form'),
+    loginInput = document.querySelectorAll('.login-input'),
+    loginBtn = document.querySelector('#login-btn'),
+    profileIcon = document.querySelector('.profile-icon'),
+    profileInitials = document.querySelector('.profile-initials');
+
+  loginBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const loginData = Array.from(loginInput).reduce((acc, input) => {
+      acc[input.name] = input.value;
+      return acc;
+    }, {});
+
+    const keys = Object.keys(localStorage);
+
+    const getInitials = (name, lastName) => {
+      return name[0] + lastName[0];
+    };
+
+    // check data in local storage to login
+
+    for (let i = 0; i < keys.length; i++) {
+      const data = JSON.parse(localStorage.getItem(keys[i]));
+
+      if (
+        loginData.email === data.email &&
+        loginData.password === data.password
+      ) {
+        console.log('Login successful!');
+        // close modal login
+        loginInput.forEach((input) => (input.value = ''));
+        modalLogin.classList.remove('show');
+        modalLogin.classList.add('hide');
+
+        // change profile icon to initials
+        const initials = getInitials(data.name, data.last_name).toUpperCase();
+
+        profileInitials.textContent = initials;
+
+        profileIcon.classList.add('hide');
+        profileInitials.classList.remove('hide');
+
+        return data;
+      }
+    }
+    if (
+      !loginData.email === data.email ||
+      !loginData.password === data.password
+    ) {
+      console.log('Invalid e-mail or password.');
     }
   });
 });
